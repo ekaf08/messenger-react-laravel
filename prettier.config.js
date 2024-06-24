@@ -1,6 +1,6 @@
 export default {
-    plugins: ["prettier-plugin-tailwindcss"],
-    tailwindFunctions: ["clsx"],
+    plugins: ['prettier-plugin-tailwindcss'],
+    tailwindFunctions: ['clsx'],
 };
 
 // prettier.config.js
