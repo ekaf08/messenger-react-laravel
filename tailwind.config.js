@@ -15,6 +15,26 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                background: "hsl(var(--background))",
+                foreground: "hsl(var(--foreground))",
+                secondary:{
+                    DEFAULT: "hsl(var(--secondary))",
+                    foreground: "hsl(var(--secondary-foreground))",
+                },
+                primary:{
+                    DEFAULT: colors.blue[600],
+                    dark: colors.blue[700],
+                },
+                success:{
+                    DEFAULT: colors.emerald[600],
+                    dark: colors.emerald[700],
+                },
+                danger:{
+                    DEFAULT: colors.red[600],
+                    dark: colors.red[700],
+                },
+            },
         },
     },
 
