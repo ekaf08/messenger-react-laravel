@@ -32,7 +32,7 @@ export default function Login({ status, canResetPassword }: { status?: string, c
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
-            <form onSubmit={submit}>
+            <form onSubmit={submit} className='space-y-4'>
                 <div>
                     <InputLabel htmlFor="email" value="Email" />
 
@@ -50,7 +50,7 @@ export default function Login({ status, canResetPassword }: { status?: string, c
                     <InputError message={errors.email} className="mt-2" />
                 </div>
 
-                <div className="mt-4">
+                <div >
                     <InputLabel htmlFor="password" value="Password" />
 
                     <TextInput
@@ -66,30 +66,39 @@ export default function Login({ status, canResetPassword }: { status?: string, c
                     <InputError message={errors.password} className="mt-2" />
                 </div>
 
-                <div className="block mt-4">
+                <div className="flex items-center justify-between">
                     <label className="flex items-center">
                         <Checkbox
                             name="remember"
                             checked={data.remember}
                             onChange={(e) => setData('remember', e.target.checked)}
                         />
-                        <span className="ms-2 text-sm text-gray-600">Remember me</span>
+                        <span className="ms-2 text-sm text-foreground">Remember me</span>
                     </label>
-                </div>
 
-                <div className="flex items-center justify-end mt-4">
-                    {canResetPassword && (
+                {canResetPassword && (
                         <Link
                             href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="btn-link"
                         >
                             Forgot your password?
                         </Link>
                     )}
 
-                    <PrimaryButton className="ms-4" disabled={processing}>
+                </div>
+
+                
+
+                <div className="flex">
+                    <PrimaryButton className="w-full" disabled={processing}>
                         Log in
                     </PrimaryButton>
+                </div>
+
+                <div className="flex justify-center">
+                    <Link href={route('register')} className='btn-link'>
+                    Don't have an account ?
+                    </Link>
                 </div>
             </form>
         </GuestLayout>
