@@ -40,8 +40,8 @@ export default function ForgotPassword({ status }: { status?: string }) {
 
                 <InputError message={errors.email} className="mt-2" />
 
-                <div className="flex items-center justify-end mt-4">
-                    <PrimaryButton className="ms-4" disabled={processing}>
+                <div className="flex mt-4">
+                    <PrimaryButton className="w-full" disabled={processing}>
                         Email Password Reset Link
                     </PrimaryButton>
                 </div>
