@@ -6,6 +6,7 @@ import InputLabel from '@/components/InputLabel';
 import PrimaryButton from '@/components/PrimaryButton';
 import TextInput from '@/components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
+import FormAlert from '@/components/FormAlert';
 
 export default function Login({ status, canResetPassword }: { status?: string, canResetPassword: boolean }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -30,7 +31,7 @@ export default function Login({ status, canResetPassword }: { status?: string, c
         <GuestLayout>
             <Head title="Log in" />
 
-            {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
+            {status && (<FormAlert message={status} />)}
 
             <form onSubmit={submit} className='space-y-4'>
                 <div>
